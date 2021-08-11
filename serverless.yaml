@@ -1,0 +1,15 @@
+# serverless.yml
+service: hmac-service
+
+provider:
+  name: aws
+  runtime: python3.8
+  memorySize: 128 # optional, in MB, default is 1024
+  timeout: 15 # optional, in seconds, default is 6
+  versionFunctions: false # optional, default is true
+
+functions:
+  hello:
+    handler: main.lambda_handler # required, handler set in AWS Lambda
+    name: hmac-lambda-handler # optional, Deployed Lambda name
+    description: A lambda handler for HMAC SHA1 api for api gateway # optional, Description to publish to AWS
